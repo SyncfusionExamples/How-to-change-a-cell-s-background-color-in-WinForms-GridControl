@@ -5,23 +5,23 @@ Public Class Form1
     Public Sub New()
         InitializeComponent()
 
-        GridControl1.RowCount = 10
-        GridControl1.ColCount = 6
+        Me.GridControl1.RowCount = 10
+        Me.GridControl1.ColCount = 6
 
         ' Set the backcolor for a particular cell
-        GridControl1(2, 3).BackColor = Color.Red
+        Me.GridControl1(2, 3).BackColor = Color.Red
 
         ' Set the backcolor using Interior property
-        GridControl1(3, 2).Interior = New BrushInfo(GradientStyle.Horizontal, Color.Yellow, Color.Blue)
-        GridControl1(4, 2).Interior = New BrushInfo(PatternStyle.DashedHorizontal, Color.Black, Color.White)
+        Me.GridControl1(3, 2).Interior = New BrushInfo(GradientStyle.Horizontal, Color.Yellow, Color.Blue)
+        Me.GridControl1(4, 2).Interior = New BrushInfo(PatternStyle.DashedHorizontal, Color.Black, Color.White)
 
         ' Set the backcolor for a range of cells
         Dim style As New GridStyleInfo()
         style.BackColor = Color.Aquamarine
-        GridControl1.ChangeCells(GridRangeInfo.Cells(4, 4, 5, 5), style)
+        Me.GridControl1.ChangeCells(GridRangeInfo.Cells(4, 4, 5, 5), style)
 
         ' Attach the QueryCellInfo event
-        AddHandler GridControl1.QueryCellInfo, AddressOf OnQueryCellInfo
+        AddHandler Me.GridControl1.QueryCellInfo, AddressOf OnQueryCellInfo
     End Sub
 
     Private Sub OnQueryCellInfo(sender As Object, e As GridQueryCellInfoEventArgs)
